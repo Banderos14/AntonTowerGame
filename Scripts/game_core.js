@@ -6,7 +6,6 @@ let previousTime = 0.0;
 function start() {
     game.canvas = document.getElementById('game-canvas');
     game.context = game.canvas.getContext('2d');
-   
 
     window.requestAnimationFrame(time => {
         previousTime = time;
@@ -45,13 +44,12 @@ function render() {
     // set the canvas origin (0,0) to center canvas
     // All coordinates to the left of center canvas are negative
     // All coordinates below center canvas are negative
-    game.context.translate( game.context.canvas.width/2, game.context.canvas.height/2);
 
-    game.context.font = "24px serif";
+    game.context.font = "12px serif";
     game.context.fillStyle = "red";
-    game.context.fillText(game.fps, 0, 0);
+    game.context.fillText(game.fps, 10, 30);
 }
 
 function update(dt){
-    game.fps = Math.floor(Math.random() * 1000);
+    game.fps = (1000/dt).toFixed(2) + "fps"; 
 }
