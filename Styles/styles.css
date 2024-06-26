@@ -1,0 +1,25 @@
+.button-primary-large { 
+    border-radius:  1rem;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+    
+}
+
+.margin-lg {
+    margin: 3rem;
+}
+
+.margin-md {
+    margin: 2rem;
+}
+
+.margin-sm {
+    margin: 1rem;
+}
+
+#game-canvas {
+    display: none;
+    width:100%;
+    aspect-ratio: 16/9;
+}

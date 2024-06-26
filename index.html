@@ -4,15 +4,13 @@
     <meta charset="utf-8" />
     <title></title>
     <link href="Styles/styles.css" rel="stylesheet" />
+    <link href="Styles/Themes/colors_dark.css" rel="stylesheet" />
   </head>
-  <body>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
-      obcaecati. Alias quo assumenda expedita qui corporis sunt saepe officia
-      quia numquam explicabo id culpa at, veritatis officiis eos? Libero,
-      dolores?
-    </p>
+  <body class="default-background">
+    <canvas id="game-canvas"></canvas>
+    <button id="start-button" class="button-primary-large margin-lg" onclick="startGame()">Start</button>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <script></script>
+    <script src="Scripts/game_core.js"></script>
+    <script src="Scripts/main.js"></script>
   </body>
 </html>
