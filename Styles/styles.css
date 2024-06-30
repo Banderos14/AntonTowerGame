@@ -6,6 +6,10 @@
     
 }
 
+.margin-0 {
+    margin: 0;
+}
+
 .margin-lg {
     margin: 3rem;
 }
@@ -20,6 +24,4 @@
 
 #game-canvas {
     display: none;
-    width:100%;
-    aspect-ratio: 16/9;
 }
