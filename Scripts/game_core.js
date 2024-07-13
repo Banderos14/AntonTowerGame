@@ -11,9 +11,7 @@ function start() {
     game.context.translate(game.canvas.width/2, game.canvas.height/2);
 
     game.objects = [];
-
-    var player = new Player(new Point(0,0));
-    game.objects.push(player);
+    game.player = new Player(new Point(0,0));
 
     game.wave = new Wave();
 
@@ -56,6 +54,9 @@ function render() {
     game.context.shadowBlur = DEFAULT_SHADOW_BLUR;
     game.context.fillText(game.fps, -game.context.canvas.width / 2 + 8, -game.context.canvas.height / 2 + 32);
 
+    // Render player
+    game.player.draw(game.context);
+
     // Render all objects
     game.objects.forEach(obj => obj.draw(game.context));
 }
@@ -71,4 +72,8 @@ function update(dt){
     game.objects.forEach(obj => obj.update(dt));
 
     game.objects = game.objects.filter(obj => !obj.isDestroyed)
+
+    //Update player
+    game.player.update(dt, game.objects)
+
 }

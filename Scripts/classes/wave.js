@@ -1,3 +1,13 @@
+function randomFloorNumber(number) {
+    var finalNumber = Math.floor(number);
+    var remaining = number - finalNumber;
+    var random = Math.random();
+
+    if (random <= remaining) finalNumber++;
+
+    return finalNumber; 
+}
+
 class Wave {
     currentDuration = WAVE_DURATION;
     currentBreak = WAVE_BREAK_DURATION;
@@ -8,7 +18,7 @@ class Wave {
     constructor(){
 
     }
-
+        
     update(dt, game) {
         if (this.currentDuration > 0){
             this.currentDuration -= dt;
@@ -22,11 +32,11 @@ class Wave {
                 var remainingSpawns = Math.floor(this.currentDuration / WAVE_SPAWN_INTERVAL);
                 if (remainingSpawns == 0) return;
 
-                var currentSpawnCount = this.remainingEnemies / remainingSpawns; 
+                var currentSpawnCount = randomFloorNumber(this.remainingEnemies / remainingSpawns); 
 
                 this.remainingEnemies -= currentSpawnCount;
 
-                console.log(currentSpawnCount);
+                //console.log(currentSpawnCount + " of " + this.remainingEnemies);
 
                 for (var i=0; i< currentSpawnCount; i++) {
                     
@@ -55,6 +65,5 @@ class Wave {
             }
         }
     }
-
 
 }
